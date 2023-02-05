@@ -1,4 +1,4 @@
-package com.hw.hw3;
+package com.st1.hw.hw3;
 
 /**
  * Задание 3
