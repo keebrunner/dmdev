@@ -23,7 +23,10 @@ public class Task3 {
         int c = 30;
         int d = 5;
 
-        compareSquares(a, b, c, d);
+        double square1 = calculateSquare(a, b);
+        double square2 = calculateSquare(c, d);
+
+        compareSquares(square1, square2);
     }
 
     public static double calculateSquare(int a, int b) {
@@ -31,12 +34,11 @@ public class Task3 {
         return s;
     }
 
-    public static void compareSquares(int a, int b, int c, int d) {
-        double square1 = calculateSquare(a, b);
-        double square2 = calculateSquare(c, d);
-        if (square1 > square2) {
+    public static void compareSquares(double a, double b) {
+
+        if (a > b) {
             System.out.println("The square of the first triangle is larger than the square of the second triangle.");
-        } else if (square1 < square2) {
+        } else if (a < b) {
             System.out.println("The square of the first triangle is smaller than the square of the second triangle.");
         } else {
             System.out.println("The squares of these triangles are equal.");
