@@ -21,7 +21,7 @@ public class Task2 {
         int currentReverceNumber = 0;
         int result = 0;
         for (int i = 0; i < (value > 0 ? value : value * -1); value /= 10) {
-            currentReverceNumber = (result * ((int) Math.pow(10, 1))) + (value % 10);
+            currentReverceNumber = (result * 10) + (value % 10);
             result = currentReverceNumber;
         }
         System.out.println(result);
