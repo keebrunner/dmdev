@@ -12,7 +12,7 @@ package com.st1.hw.hw4;
 public class Task1 {
 
     public static void main(String[] args) {
-        int value = 1;
+        int value = 1111;
         countEven(value);
         countOdd(value);
         System.out.println("The value contains " + countEven(value) + " even and " + countOdd(value) + " odd numbers.");
