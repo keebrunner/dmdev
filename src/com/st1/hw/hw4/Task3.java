@@ -23,11 +23,12 @@ public class Task3 {
         int brockerProfitPercent = 2;
         int billingMonths = 38;
 
-        finCalc(salary, currentCosts, brockerInvestPercent, brockerProfitPercent, quartIncrease, billingMonths);
+        finCalc(salary, currentCosts, brockerInvestPercent, brockerProfitPercent,
+                quartIncrease, billingMonths);
     }
 
-    private static void finCalc(int salary, int currentCosts, int brockerInvestPercent, int brockerProfitPercent,
-                                int quartIncrease, int months) {
+    private static void finCalc(int salary, int currentCosts, int brockerInvestPercent,
+                                int brockerProfitPercent, int quartIncrease, int months) {
         int monthsCounter = 1;
         int personalAccount = 0;
         int brockerMonthAmount = 0;
@@ -35,8 +36,8 @@ public class Task3 {
 
         for (int i = 1; i <= months; i++) {
 
-            if (salary <= 0 || currentCosts < 0 || brockerInvestPercent < 0 || brockerProfitPercent < 0
-                    || quartIncrease < 0 || months < 0) {
+            if (salary <= 0 || currentCosts < 0 || brockerInvestPercent < 0 ||
+                    brockerProfitPercent < 0 || quartIncrease < 0 || months < 0) {
                 break;
             }
 
@@ -46,15 +47,18 @@ public class Task3 {
             monthsCounter++;
 
             brockerMonthAmount = (salary / 100 * brockerInvestPercent);
-            brockerAccount += brockerMonthAmount + (brockerAccount / 100 * brockerProfitPercent);
+            brockerAccount += brockerMonthAmount + (brockerAccount / 100 *
+                    brockerProfitPercent);
 
             personalAccount += ((salary - currentCosts) - brockerMonthAmount);
         }
         if (personalAccount == 0 || brockerAccount == 0) {
             System.out.println("The entered data is incorrect");
         } else {
-            System.out.println("During the calculation period, the user's personal account will grow by $" + personalAccount);
-            System.out.println("The user's brokerage account will grow by $" + brockerAccount);
+            System.out.println("During the calculation period, " +
+                    "the user's personal account will grow by $" + personalAccount);
+            System.out.println("The user's brokerage account will grow by $"
+                    + brockerAccount);
         }
     }
 }
