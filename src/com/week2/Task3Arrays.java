@@ -57,6 +57,7 @@ public class Task3Arrays {
                 count2++;
             }
         }
+
         int[][] result = {array0, array1, array2};
 
         for (int i = 0; i < result.length; i++) {
