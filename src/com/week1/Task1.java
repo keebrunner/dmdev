@@ -38,4 +38,5 @@ public class Task1 {
             System.out.println(value + " minutes is the fourth quarter.");
         }
     }
+
 }
