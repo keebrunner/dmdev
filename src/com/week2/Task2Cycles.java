@@ -26,6 +26,7 @@ public class Task2Cycles {
         }
         System.out.println(result);
     }
+
 }
 
 

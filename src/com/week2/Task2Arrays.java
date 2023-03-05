@@ -44,4 +44,5 @@ public class Task2Arrays {
         }
         return numArray;
     }
+
 }
