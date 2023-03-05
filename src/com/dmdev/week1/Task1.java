@@ -1,4 +1,4 @@
-package com.week1;
+package com.dmdev.week1;
 
 /**
  * Задание 1

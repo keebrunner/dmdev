@@ -1,4 +1,4 @@
-package com.week2;
+package com.dmdev.week2;
 
 /**
  * Программист Ваня сразу после окончания курсов dmdev устроился в IT компанию на позицию Junior Java Developer

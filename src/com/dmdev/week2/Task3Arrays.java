@@ -1,4 +1,4 @@
-package com.week2;
+package com.dmdev.week2;
 
 /*Задание 3
         Дан одномерный массив целых чисел.
