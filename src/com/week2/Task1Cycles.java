@@ -41,4 +41,5 @@ public class Task1Cycles {
         }
         return counter;
     }
+
 }
