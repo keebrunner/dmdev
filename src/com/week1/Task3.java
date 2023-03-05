@@ -44,5 +44,6 @@ public class Task3 {
             System.out.println("The squares of these triangles are equal.");
         }
     }
+
 }
 
