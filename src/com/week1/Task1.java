@@ -1,4 +1,4 @@
-package com.st1.hw.hw3;
+package com.week1;
 
 /**
  * Задание 1
@@ -15,6 +15,13 @@ public class Task1 {
     public static void main(String[] args) {
         int minutes = 10;
         printQuarter(minutes);
+
+        int[] values = {2, 4, 6, 8};
+
+        for (int value : values) {
+            value *= 2;
+            System.out.print(value + " ");
+        }
     }
 
     public static void printQuarter(int value) {

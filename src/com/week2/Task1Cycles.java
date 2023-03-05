@@ -1,4 +1,4 @@
-package com.st1.hw.hw4;
+package com.week2;
 
 /**
  * Задание 1
@@ -9,7 +9,7 @@ package com.st1.hw.hw4;
  * Например: если введено число 228910, то у него 4 четные цифры (2, 2, 8, 0) и 2 нечетные (9, 1).
  */
 
-public class Task1 {
+public class Task1Cycles {
 
     public static void main(String[] args) {
         int value = 1111;

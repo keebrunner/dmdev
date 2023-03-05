@@ -1,4 +1,4 @@
-package com.st1.hw.hw4;
+package com.week2;
 
 /**
  * Программист Ваня сразу после окончания курсов dmdev устроился в IT компанию на позицию Junior Java Developer
@@ -13,13 +13,13 @@ package com.st1.hw.hw4;
  */
 
 
-public class Task3 {
+public class Task3Cycles {
 
     public static void main(String[] args) {
         int salary = 600;
         int currentCosts = 300;
         int quartIncrease = 400;
-        int brockerInvestPercent = 20;
+        int brockerInvestPercent = 10;
         int brockerProfitPercent = 2;
         int billingMonths = 38;
 

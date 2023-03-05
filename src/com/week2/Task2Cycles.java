@@ -1,4 +1,4 @@
-package com.st1.hw.hw4;
+package com.week2;
 
 /**
  * Задание 2
@@ -9,7 +9,7 @@ package com.st1.hw.hw4;
  * <p>
  * Примечание: для решения может понадобится функция возведение числа в степень: Math.pow(число, степень)
  */
-public class Task2 {
+public class Task2Cycles {
 
     public static void main(String[] args) {
         int number = -987654321;
