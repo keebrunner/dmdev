@@ -35,5 +35,4 @@ public class Task1 {
 
         return stringBuilder.toString();
     }
-
 }

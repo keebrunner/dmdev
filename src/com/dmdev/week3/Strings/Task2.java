@@ -56,5 +56,4 @@ public class Task2 {
 
         return sum;
     }
-
 }
