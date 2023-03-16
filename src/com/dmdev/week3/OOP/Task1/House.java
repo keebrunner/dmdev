@@ -1,4 +1,4 @@
-package com.dmdev.week3.task1;
+package com.dmdev.week3.OOP.Task1;
 
 public class House {
     private int houseNumber;
