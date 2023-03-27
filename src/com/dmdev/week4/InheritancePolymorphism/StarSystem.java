@@ -2,12 +2,12 @@ package com.dmdev.week4.InheritancePolymorphism;
 
 import static com.dmdev.week4.InheritancePolymorphism.utils.Constants.DIAMETER_COEFFICIENT;
 
-public abstract class SpaceObject {
+public abstract class StarSystem {
     private double mass;
     private String name;
     private double[] coordinates = new double[3];
 
-    public SpaceObject(double mass, String name, double[] coordinates) throws IllegalAccessException {
+    public StarSystem(double mass, String name, double[] coordinates) throws IllegalAccessException {
         if (mass <= 0) {
             throw new IllegalAccessException("Mass must be greater than 0");
         }
@@ -20,14 +20,14 @@ public abstract class SpaceObject {
         return Math.pow((getMass() * 3) / DIAMETER_COEFFICIENT, 1 / 3.0);
     }
 
-    public double calculateDistance(SpaceObject other) {
+    public double calculateDistance(StarSystem other) {
         double dx = this.coordinates[0] - other.coordinates[0];
         double dy = this.coordinates[1] - other.coordinates[1];
         double dz = this.coordinates[2] - other.coordinates[2];
         return Math.sqrt(dx * dx + dy * dy + dz * dz);
     }
 
-    public abstract String compareMass(SpaceObject spaceObject);
+    public abstract String compareMass(StarSystem starSystem);
 
     public String getName() {
         return name;
