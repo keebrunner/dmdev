@@ -2,7 +2,7 @@ package com.dmdev.week4.InheritancePolymorphism;
 
 import static com.dmdev.week4.InheritancePolymorphism.utils.Constants.DIAMETER_COEFFICIENT;
 
-public class Asteroid extends SpaceObject {
+public class Asteroid extends StarSystem {
     private String composition;
     private String classification;
 
@@ -34,14 +34,14 @@ public class Asteroid extends SpaceObject {
     }
 
     @Override
-    public String compareMass(SpaceObject spaceObject) {
-        double difference = Math.abs(this.getMass() - spaceObject.getMass());
-        if (this.getMass() < spaceObject.getMass()) {
-            return "Mass of the current object is less than that of " + spaceObject.getName() + " by " + difference + " kg";
-        } else if (this.getMass() > spaceObject.getMass()) {
-            return "Mass of the current object is greater than that of " + spaceObject.getName() + " by " + difference + " kg";
+    public String compareMass(StarSystem starSystem) {
+        double difference = Math.abs(this.getMass() - starSystem.getMass());
+        if (this.getMass() < starSystem.getMass()) {
+            return "Mass of the current object is less than that of " + starSystem.getName() + " by " + difference + " kg";
+        } else if (this.getMass() > starSystem.getMass()) {
+            return "Mass of the current object is greater than that of " + starSystem.getName() + " by " + difference + " kg";
         } else {
-            return "Mass of the current object is equal to the mass of " + spaceObject.getName();
+            return "Mass of the current object is equal to the mass of " + starSystem.getName();
         }
     }
 
@@ -52,7 +52,7 @@ public class Asteroid extends SpaceObject {
                 "\n Mass: " + getMass() +
                 "Composition: " + composition +
                 "\n Classification: " + classification +
-                "\n Coordinates: [" + getCoordinates(0) + ", " + getCoordinates(1) + ", " + getCoordinates(2) +
+                "\n Coordinates: [" + getCoordinates(0) + ", " + getCoordinates(1) + ", " + getCoordinates(2) + "]" +
                 "\n}";
     }
 }

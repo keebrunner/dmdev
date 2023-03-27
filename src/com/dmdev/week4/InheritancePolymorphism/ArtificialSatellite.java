@@ -38,14 +38,14 @@ public class ArtificialSatellite extends Planet implements GeoStationary {
     }
 
     @Override
-    public String compareMass(SpaceObject spaceObject) {
-        double difference = Math.abs(getMass() - spaceObject.getMass());
+    public String compareMass(StarSystem starSystem) {
+        double difference = Math.abs(getMass() - starSystem.getMass());
         if (difference < 1) {
-            return "The difference in mass between " + getName() + " and " + spaceObject.getName() + " is negligible.";
-        } else if (getMass() > spaceObject.getMass()) {
-            return getName() + " is " + difference + " times heavier than " + spaceObject.getName() + ".";
+            return "The difference in mass between " + getName() + " and " + starSystem.getName() + " is negligible.";
+        } else if (getMass() > starSystem.getMass()) {
+            return getName() + " is " + difference + " times heavier than " + starSystem.getName() + ".";
         } else {
-            return spaceObject.getName() + " is " + difference + " times heavier than " + getName() + ".";
+            return starSystem.getName() + " is " + difference + " times heavier than " + getName() + ".";
         }
     }
 
@@ -56,7 +56,7 @@ public class ArtificialSatellite extends Planet implements GeoStationary {
                 "\n Mass: " + getMass() +
                 "\n Is Geosynchronous: " + isGeoSynchronous() +
                 "\n Is Geo-Stationary: " + isGeoStationary() +
-                "\n Coordinates: [" + getCoordinates(0) + ", " + getCoordinates(1) + ", " + getCoordinates(2) +
+                "\n Coordinates: [" + getCoordinates(0) + ", " + getCoordinates(1) + ", " + getCoordinates(2) + "]" +
                 "\n}";
     }
 
