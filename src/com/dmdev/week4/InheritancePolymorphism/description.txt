@@ -1,0 +1,24 @@
+ StarSystem Kepler186 from the Cygnus constellation
+ ├── ✶ Star Kepler186
+ ├── ○ Planet Kepler186b
+ ├── ○ Planet Kepler186c
+ ├── ○ Planet Kepler186d
+ │ ├── ● NaturalSatellite Kepler186d I
+ │ └── ● NaturalSatellite Kepler186d II
+ ├── ○ Planet Kepler186e
+ │ ├── ● NaturalSatellite Kepler186e I
+ │ ├── ● NaturalSatellite Kepler186e II
+ │ ├── ● NaturalSatellite Kepler186e III
+ │ └── ● NaturalSatellite Kepler186e IV
+ ├── ○ Planet Kepler186f
+ │ ├── ● NaturalSatellite Kepler186f I
+ │ ├── ✾ ArtificialSatellite Kepler186f AI
+ │ ├── ✾ ArtificialSatellite Kepler186f AII
+ │ ├── ✾ ArtificialSatellite Kepler186f AIII
+ │ └── ✾ ArtificialSatellite Kepler186f AIV
+ ├── ⚝ Comet Cybernova
+ ├── ⚝ Comet Circuitron
+ ├── ✦ Asteroid Kepler186AST1
+ └── ✦ Asteroid Kepler186AST2
+
+
