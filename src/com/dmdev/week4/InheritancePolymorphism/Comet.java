@@ -2,7 +2,7 @@ package com.dmdev.week4.InheritancePolymorphism;
 
 import static com.dmdev.week4.InheritancePolymorphism.utils.Constants.DIAMETER_COEFFICIENT;
 
-public class Comet extends StarSystem {
+public class Comet extends SpaceObject {
     private double orbitPeriod;
     private double nucleusSize;
 
@@ -18,14 +18,14 @@ public class Comet extends StarSystem {
     }
 
     @Override
-    public String compareMass(StarSystem starSystem) {
-        double difference = Math.abs(this.getMass() - starSystem.getMass());
-        if (this.getMass() < starSystem.getMass()) {
-            return "Mass of the current object is less than that of " + starSystem.getName() + " by " + difference + " kg";
-        } else if (this.getMass() > starSystem.getMass()) {
-            return "Mass of the current object is greater than that of " + starSystem.getName() + " by " + difference + " kg";
+    public String compareMass(SpaceObject spaceObject) {
+        double difference = Math.abs(this.getMass() - spaceObject.getMass());
+        if (this.getMass() < spaceObject.getMass()) {
+            return "Mass of the current object is less than that of " + spaceObject.getName() + " by " + difference + " kg";
+        } else if (this.getMass() > spaceObject.getMass()) {
+            return "Mass of the current object is greater than that of " + spaceObject.getName() + " by " + difference + " kg";
         } else {
-            return "Mass of the current object is equal to the mass of " + starSystem.getName();
+            return "Mass of the current object is equal to the mass of " + spaceObject.getName();
         }
     }
 

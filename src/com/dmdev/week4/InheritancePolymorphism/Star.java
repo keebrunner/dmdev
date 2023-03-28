@@ -1,6 +1,6 @@
 package com.dmdev.week4.InheritancePolymorphism;
 
-public class Star extends StarSystem {
+public class Star extends SpaceObject {
     private String starType;
     private double temperature;
 
@@ -16,14 +16,14 @@ public class Star extends StarSystem {
     }
 
     @Override
-    public String compareMass(StarSystem starSystem) {
-        double difference = Math.abs(this.getMass() - starSystem.getMass());
+    public String compareMass(SpaceObject spaceObject) {
+        double difference = Math.abs(this.getMass() - spaceObject.getMass());
         if (difference < 1e-10) {
             return "Masses are equal";
-        } else if (this.getMass() > starSystem.getMass()) {
-            return "The mass of " + getName() + " is greater than the mass of " + starSystem.getName() + " by " + difference + " kg";
+        } else if (this.getMass() > spaceObject.getMass()) {
+            return "The mass of " + getName() + " is greater than the mass of " + spaceObject.getName() + " by " + difference + " kg";
         } else {
-            return "The mass of " + starSystem.getName() + " is greater than the mass of " + getName() + " by " + difference + " kg";
+            return "The mass of " + spaceObject.getName() + " is greater than the mass of " + getName() + " by " + difference + " kg";
         }
     }
 

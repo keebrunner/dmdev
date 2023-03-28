@@ -4,7 +4,7 @@ import com.dmdev.week4.InheritancePolymorphism.utils.Constants;
 
 import static com.dmdev.week4.InheritancePolymorphism.utils.Constants.DIAMETER_COEFFICIENT;
 
-public class Planet extends StarSystem {
+public class Planet extends SpaceObject {
     //Composition of the atmosphere
     private String atmosphereComposition;
     private int numberOfSatellites;
@@ -35,14 +35,14 @@ public class Planet extends StarSystem {
     }
 
     @Override
-    public String compareMass(StarSystem starSystem) {
-        double difference = Math.abs(getMass() - starSystem.getMass());
+    public String compareMass(SpaceObject spaceObject) {
+        double difference = Math.abs(getMass() - spaceObject.getMass());
         if (difference < 1) {
-            return "The difference in mass between " + getName() + " and " + starSystem.getName() + " is negligible.";
-        } else if (getMass() > starSystem.getMass()) {
-            return getName() + " is " + difference + " times heavier than " + starSystem.getName() + ".";
+            return "The difference in mass between " + getName() + " and " + spaceObject.getName() + " is negligible.";
+        } else if (getMass() > spaceObject.getMass()) {
+            return getName() + " is " + difference + " times heavier than " + spaceObject.getName() + ".";
         } else {
-            return starSystem.getName() + " is " + difference + " times heavier than " + getName() + ".";
+            return spaceObject.getName() + " is " + difference + " times heavier than " + getName() + ".";
         }
     }
 
