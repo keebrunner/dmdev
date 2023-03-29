@@ -1,4 +1,4 @@
-package com.dmdev.week5.Task1;
+package com.dmdev.week5.Collections1.Task1;
 
 public class Chat {
     private String name;

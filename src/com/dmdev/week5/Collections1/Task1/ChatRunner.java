@@ -1,6 +1,6 @@
-package com.dmdev.week5.Task1;
+package com.dmdev.week5.Collections1.Task1;
 
-import com.dmdev.week5.Task1.utils.ChatComparator;
+import com.dmdev.week5.Collections1.Task1.utils.ChatComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;

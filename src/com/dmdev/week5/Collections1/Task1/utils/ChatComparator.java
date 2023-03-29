@@ -1,6 +1,6 @@
-package com.dmdev.week5.Task1.utils;
+package com.dmdev.week5.Collections1.Task1.utils;
 
-import com.dmdev.week5.Task1.Chat;
+import com.dmdev.week5.Collections1.Task1.Chat;
 
 import java.util.Comparator;
 
