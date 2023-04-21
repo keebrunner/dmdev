@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS user_profile
     id              SERIAL PRIMARY KEY,
     user_id         INTEGER REFERENCES users (id) NOT NULL,
 -- Это аватар в виде UTF-смайла, по умолчанию E'\\U0001F468'
-    profile_picture VARCHAR(255)                           DEFAULT E'\\U0001F468',
+    profile_picture VARCHAR(255)                           DEFAULT E'\U0001F468',
 -- Это краткое 'о себе', типа 'Дизайнер из Петербурга, 23 года.'
-    bio             TEXT CHECK (length(bio) <= 100),
+    bio             TEXT CHECK (length(bio) <= 100)        DEFAULT '',
     created_at      TIMESTAMP                     NOT NULL DEFAULT NOW()
 );
 
@@ -143,3 +143,66 @@ VALUES (1, 1, 'Has anyone benchmarked the latest Java 19 release for CPU-intensi
        (5, 6, 'I enjoyed it, but I found the portrayal of technology to be overly optimistic.'),
        (5, 7,
         'I appreciate how it blended science fiction and philosophy, and challenged our ideas about language and communication. It is a true masterpiece!');
+
+SELECT *
+FROM user_profile
+WHERE user_id = (SELECT id FROM users WHERE username = 'Donald_Knuth');
+
+SELECT *
+FROM users
+WHERE id IN
+      (SELECT friend_id FROM user_friendship WHERE user_id = (SELECT id FROM users WHERE username = 'Barbara_Liskov'));
+
+SELECT chat.*
+FROM chat_member
+         JOIN chat ON chat.id = chat_member.chat_id
+WHERE chat_member.user_id = (SELECT id FROM users WHERE username = 'Andrey_Breslav');
+
+SELECT COUNT(*)
+FROM message
+WHERE chat_id = (SELECT id FROM chat WHERE name = 'Java Performance Optimization');
+
+INSERT INTO users (username, password, email)
+VALUES ('Eve_Marder', 'Pn8bW6tF2L', 'eve_marder@brandeis.edu'),
+       ('Michael_Häusser', 'Gh5fS2jD1M', 'michael_hausser@ucl.ac.uk');
+
+INSERT INTO user_profile (user_id, bio, profile_picture)
+VALUES (8, 'Professor of Biology at Brandeis University', E'\U0001F469\u200D\U0001F393'),
+       (9, 'Professor of Neuroscience at University College London', E'\U0001F468\u200D\U0001F52C');
+
+INSERT INTO friendship (user_id, friend_id)
+VALUES ((SELECT id FROM users WHERE username = 'Eve_Marder'),
+        (SELECT id FROM users WHERE username = 'Yoshua_Bengio')),
+       ((SELECT id FROM users WHERE username = 'Michael_Häusser'),
+        (SELECT id FROM users WHERE username = 'Yoshua_Bengio')),
+       ((SELECT id FROM users WHERE username = 'Eve_Marder'),
+        (SELECT id FROM users WHERE username = 'Michael_Häusser'));
+
+INSERT INTO chat_member (chat_id, user_id)
+VALUES ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algorithms'),
+        (SELECT id FROM users WHERE username = 'Eve_Marder')),
+       ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algorithms'),
+        (SELECT id FROM users WHERE username = 'Michael_Häusser')),
+       ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algorithms'),
+        (SELECT id FROM users WHERE username = 'Yoshua_Bengio'));
+
+INSERT INTO message (chat_id, user_id, text)
+VALUES ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algorithms'),
+        (SELECT id FROM users WHERE username = 'Eve_Marder'),
+        'How can we convert neural spike data from sensors into a format that can be used in Java programming?');
+INSERT INTO message (chat_id, user_id, text)
+VALUES ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algorithms'),
+        (SELECT id FROM users WHERE username = 'Yoshua_Bengio'),
+        'We can use various data processing libraries such as PyTorch, TensorFlow, or Apache Spark. ' ||
+        'We can also use programming languages such as Python to process data and create machine learning models.');
+INSERT INTO message (chat_id, user_id, text)
+VALUES ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algorithms'),
+        (SELECT id FROM users WHERE username = 'Michael_Häusser'),
+        'What machine learning algorithms can be used for analyzing neural spike data?');
+INSERT INTO message (chat_id, user_id, text)
+VALUES ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algorithms'),
+        (SELECT id FROM users WHERE username = 'Yoshua_Bengio'),
+        'Various machine learning algorithms can be used for analyzing neural spike data, ' ||
+        'including neural networks, SVMs, decision trees, etc. The specific choice of algorithm depends ' ||
+        'on the specific task and characteristics of the data you are working with.');
+
