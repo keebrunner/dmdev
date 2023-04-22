@@ -22,6 +22,15 @@ CREATE TABLE IF NOT EXISTS user_profile
     created_at      TIMESTAMP                     NOT NULL DEFAULT NOW()
 );
 
+CREATE TABLE IF NOT EXISTS user_settings
+(
+    id                 SERIAL PRIMARY KEY,
+    user_id            INTEGER REFERENCES users (id) NOT NULL,
+    notification_sound BOOLEAN DEFAULT true,
+    notification_sound_file_path TEXT DEFAULT '%APPDATA%\console_chat_repository\notification_sound.wav',
+    dark_mode          BOOLEAN DEFAULT false
+);
+
 CREATE TABLE IF NOT EXISTS friendship
 (
     id        SERIAL PRIMARY KEY,
@@ -79,6 +88,15 @@ VALUES (1, E'\U0001F468', 'Java enthusiast and performance optimizer'),
        (5, E'\U0001F47D', 'Deep learning and AI pioneer'),
        (6, E'\U0001F469\u200D\U0001F3EB', 'CEO of DeepMind and AI visionary'),
        (7, E'\U0001F468\u200D\U0001F4BB', 'Computer science professor and programming language designer');
+
+INSERT INTO user_settings (user_id, notification_sound, dark_mode)
+VALUES (1, true, false),
+       (2, false, true),
+       (3, true, true),
+       (4, false, false),
+       (5, true, false),
+       (6, false, true),
+       (7, true, true);
 
 INSERT INTO friendship (user_id, friend_id)
 VALUES (1, 2),
@@ -170,6 +188,10 @@ INSERT INTO user_profile (user_id, bio, profile_picture)
 VALUES (8, 'Professor of Biology at Brandeis University', E'\U0001F469\u200D\U0001F393'),
        (9, 'Professor of Neuroscience at University College London', E'\U0001F468\u200D\U0001F52C');
 
+INSERT INTO user_settings (user_id, notification_sound, dark_mode)
+VALUES (8, true, false),
+       (9, true, false);
+
 INSERT INTO friendship (user_id, friend_id)
 VALUES ((SELECT id FROM users WHERE username = 'Eve_Marder'),
         (SELECT id FROM users WHERE username = 'Yoshua_Bengio')),
@@ -205,4 +227,3 @@ VALUES ((SELECT id FROM chat WHERE name = 'Theoretical Computer Science and Algo
         'Various machine learning algorithms can be used for analyzing neural spike data, ' ||
         'including neural networks, SVMs, decision trees, etc. The specific choice of algorithm depends ' ||
         'on the specific task and characteristics of the data you are working with.');
-
